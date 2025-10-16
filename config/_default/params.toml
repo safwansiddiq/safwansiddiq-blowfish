@@ -47,16 +47,27 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
-  showRecent = false
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "background.svg" # used in: hero, and card
+  showRecent = true
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts/"
   cardView = false
   cardViewScreenWidth = false
-  layoutBackgroundBlur = false # only used when layout equals background
+  layoutBackgroundBlur = true # only used when layout equals background
   disableHeroImageFilter = false # only used when layout equals hero
+
+[author]
+  name = "Safwan Siddiq"
+  image = "avatar.png"  # We'll add your photo later
+  headline = "Your Professional Title"
+  bio = "Brief description about yourself and what you do"
+  links = [
+    { email = "mailto:safwansiddiq89@gmail.com" },
+    { linkedin = "https://linkedin.com/in/safwansiddiq" },
+    { github = "https://github.com/safwansiddiq" },
+  ]
 
 [article]
   showDate = true
