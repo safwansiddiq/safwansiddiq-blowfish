@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Safwan Siddiq on Safwan</title>
-    <link>http://localhost:53480/</link>
+    <link>http://localhost:53852/</link>
     <description>Recent content in Safwan Siddiq on Safwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Safwan Siddiq</copyright>
-    <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:53480/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:53852/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Project Name</title>
-      <link>http://localhost:53480/projects/project-name/</link>
+      <link>http://localhost:53852/projects/project-name/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:53480/projects/project-name/</guid>
+      <guid>http://localhost:53852/projects/project-name/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>http://localhost:53480/posts/first-post/</link>
+      <link>http://localhost:53852/posts/first-post/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:53480/posts/first-post/</guid>
+      <guid>http://localhost:53852/posts/first-post/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:53480/about/</link>
+      <link>http://localhost:53852/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:53480/about/</guid>
+      <guid>http://localhost:53852/about/</guid>
       <description></description>
       
     </item>

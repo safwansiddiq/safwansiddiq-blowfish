@@ -7,7 +7,7 @@ description: "Personal website of Safwan Siddiq"
 
 I'm a [your profession/student/role] based in [location]. I'm passionate about [your interests].
 
-[View Projects](/projects) | [Read Blog](/blog)
+[View Projects](/projects) | [Read Blog](/posts)
 
 ## What I do
 

@@ -3,37 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:53480/projects/project-name/</loc>
+    <loc>http://localhost:53852/projects/project-name/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53480/projects/</loc>
+    <loc>http://localhost:53852/projects/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53480/</loc>
+    <loc>http://localhost:53852/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53480/posts/</loc>
+    <loc>http://localhost:53852/posts/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53480/posts/first-post/</loc>
+    <loc>http://localhost:53852/posts/first-post/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:53480/about/</loc>
+    <loc>http://localhost:53852/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
