@@ -2,39 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Safwan Siddiq on Safwan</title>
-    <link>http://localhost:54956/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Safwan Siddiq on Safwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Safwan Siddiq</copyright>
-    <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:54956/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Oct 2025 16:01:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>3rd Post</title>
+      <link>http://localhost:1313/posts/3rd-post/</link>
+      <pubDate>Fri, 17 Oct 2025 16:01:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/3rd-post/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>4th Post</title>
+      <link>http://localhost:1313/posts/4th-post/</link>
+      <pubDate>Fri, 17 Oct 2025 16:01:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/4th-post/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My Second Post</title>
+      <link>http://localhost:1313/posts/my-second-post/</link>
+      <pubDate>Fri, 17 Oct 2025 15:29:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-second-post/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Project Name</title>
-      <link>http://localhost:54956/projects/project-name/</link>
+      <link>http://localhost:1313/projects/project-name/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:54956/projects/project-name/</guid>
+      <guid>http://localhost:1313/projects/project-name/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>http://localhost:54956/posts/first-post/</link>
+      <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:54956/posts/first-post/</guid>
+      <guid>http://localhost:1313/posts/first-post/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:54956/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:54956/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description></description>
       
     </item>

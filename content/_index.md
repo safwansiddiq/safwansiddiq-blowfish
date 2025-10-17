@@ -16,7 +16,11 @@ I'm a [your profession/student/role] based in [location]. I'm passionate about [
 
 {{< button href="#button" target="/projects" >}}
 What I am working on
-{{< /button >}} | [Read Blog](/posts)
+{{< /button >}}          
+
+{{< button href="#button" target="/posts" >}}
+What I wrote
+{{< /button >}}
 
 ## What I do
 
@@ -26,3 +30,4 @@ Brief description of what you do - work, studies, projects, hobbies, etc.
 
 You can link to projects or write about them here. lolol
 
+     hu
