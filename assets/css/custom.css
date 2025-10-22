@@ -7,3 +7,74 @@ body, p, li, a, span {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bitter', serif !important;
 }
+
+/* Target featured images in article cards */
+.article-card img,
+article img,
+.relative img {
+    border-radius: 0.75rem !important;
+}
+
+/* Target thumbnail containers */
+.nozoom,
+figure img {
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+}
+
+/* Ensure all content images have rounded corners */
+.prose img {
+    border-radius: 0.75rem !important;
+}
+
+/* Override center alignment for background layout */
+body:has([class*="background"]) .prose,
+body:has([class*="background"]) section,
+body:has([class*="background"]) article {
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+/* Left-align all content containers */
+.max-w-full > * {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+/* Two-column section layout */
+.feature-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.feature-section .feature-image {
+    flex: 1;
+}
+
+.feature-section .feature-content {
+    flex: 1;
+}
+
+.feature-section img {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Reverse layout for alternating sections */
+.feature-section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .feature-section,
+    .feature-section.reverse {
+        flex-direction: column;
+    }
+}
+
+p {
+  font-size: 1.125rem; /* 18px if base is 16px */
+}

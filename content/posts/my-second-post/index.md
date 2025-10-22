@@ -2,10 +2,12 @@
 date: 2025-10-17T15:29:02+08:00
 draft: false
 title: "My Second Post"
-featuredImage: "/img/new-post.jpg"
+featuredImage: "new-post.jpg"
+showHero: true
+heroStyle: "background"
 ---
 
-# One-Click Podcast Summaries to Inbox
+## One-Click Podcast Summaries to Inbox
 
 I used to listen to long podcasts on YouTube and think:“Wow… I should really take notes on this.”
 
@@ -38,4 +40,21 @@ I just send the link—and move on.
 
 Now instead of forgetting, I just get a neat little summary in my inbox. And for once, it’s an unread email I actually want to open.
 
+### How to build it
 
+Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsum
+
+![This is a screenshot of VS Code](image1.jpeg)
+
+## This is H2 line
+
+Lorem ipsumLorem ipsumLorem ipsumLorem ipsum
+
+### another h3 line
+
+Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+Lorem ipsumLorem ipsumLorem ipsum
+Lorem ipsumLorem ipsumLorem ipsum
+Lorem ipsumLorem ipsumLorem ipsum
+
+#### is this a h4?
