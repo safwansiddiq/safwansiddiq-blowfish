@@ -2,69 +2,79 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Safwan Siddiq on Safwan</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:56029/</link>
     <description>Recent content in Safwan Siddiq on Safwan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Safwan Siddiq</copyright>
-    <lastBuildDate>Fri, 17 Oct 2025 16:01:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Oct 2025 22:01:57 +0800</lastBuildDate><atom:link href="http://localhost:56029/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Change This to Title</title>
+      <link>http://localhost:56029/posts/change-this-to-title/</link>
+      <pubDate>Wed, 22 Oct 2025 22:01:57 +0800</pubDate>
+      
+      <guid>http://localhost:56029/posts/change-this-to-title/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:56029/posts/change-this-to-title/featured.svg" />
+    </item>
     
     <item>
       <title>3rd Post</title>
-      <link>http://localhost:1313/posts/3rd-post/</link>
+      <link>http://localhost:56029/posts/3rd-post/</link>
       <pubDate>Fri, 17 Oct 2025 16:01:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/3rd-post/</guid>
+      <guid>http://localhost:56029/posts/3rd-post/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/3rd-post/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:56029/posts/3rd-post/featured.jpg" />
     </item>
     
     <item>
       <title>4th Post</title>
-      <link>http://localhost:1313/posts/4th-post/</link>
+      <link>http://localhost:56029/posts/4th-post/</link>
       <pubDate>Fri, 17 Oct 2025 16:01:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/4th-post/</guid>
+      <guid>http://localhost:56029/posts/4th-post/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/4th-post/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:56029/posts/4th-post/featured.jpg" />
     </item>
     
     <item>
       <title>My Second Post</title>
-      <link>http://localhost:1313/posts/my-second-post/</link>
+      <link>http://localhost:56029/posts/my-second-post/</link>
       <pubDate>Fri, 17 Oct 2025 15:29:02 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/my-second-post/</guid>
+      <guid>http://localhost:56029/posts/my-second-post/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-second-post/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:56029/posts/my-second-post/featured.jpg" />
     </item>
     
     <item>
       <title>Project Name</title>
-      <link>http://localhost:1313/projects/project-name/</link>
+      <link>http://localhost:56029/projects/project-name/</link>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/project-name/</guid>
+      <guid>http://localhost:56029/projects/project-name/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:56029/posts/first-post/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:56029/posts/first-post/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/first-post/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:56029/posts/first-post/featured.jpg" />
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:56029/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:56029/about/</guid>
       <description></description>
       
     </item>
