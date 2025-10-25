@@ -497,6 +497,49 @@
 
   
   
+    
+    
+      
+  
+    
+      
+    
+  
+
+
+
+    <div id="hero" class="h-[150px] md:h-[200px]"></div>
+  
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    
+    
+    <img
+      id="background-image"
+      src="/background.svg"
+      alt="Background Image"
+      class="absolute inset-0 w-full h-full object-cover">
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+    <div
+      class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+  </div>
+
+  
+    <div
+      id="background-blur"
+      class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+      integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+      data-blur-id="background-blur"
+      data-image-id="background-image"
+      data-image-url="/background.svg"></script>
+  
+    
+  
 
   
   <header>
@@ -570,55 +613,31 @@
     
 
     
-      <section class="space-y-10 w-full">
+      
         
           
-            
-              <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-                2025
-              </h2>
-            
-            
+            <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              2025
+            </h2>
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="group-hover-card group flex flex-wrap md:flex-nowrap article relative ">
+                
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
   href="/projects/project-name/"
     class="absolute inset-0"
     aria-label="Project Name"></a>
       
-    <div class=" mt-3 md:mt-0">
-    <div class="items-center text-start text-xl font-semibold">
-      
-        <div
-          class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-          Project Name
-        </div>
-      
-      
-      
-    </div>
+    
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        Project Name
+      </div>
+    
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
       
 
@@ -700,15 +719,19 @@
 
     </div>
     
+      <div class="prose dark:prose-invert py-1"></div>
+    
   </div>
   <div class="px-6 pt-4 pb-2"></div>
 </div>
 
-            
+              
+            </section>
           
         
-      </section>
-    
+
+      
+      
     
   
   

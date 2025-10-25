@@ -3,61 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:58304/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-10-22T22:01:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/posts/change-this-to-title/</loc>
+    <loc>http://localhost:1313/posts/change-this-to-title/</loc>
     <lastmod>2025-10-22T22:01:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-10-22T22:01:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/posts/3rd-post/</loc>
+    <loc>http://localhost:1313/posts/3rd-post/</loc>
     <lastmod>2025-10-17T16:01:34+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/posts/4th-post/</loc>
+    <loc>http://localhost:1313/posts/4th-post/</loc>
     <lastmod>2025-10-17T16:01:34+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/posts/my-second-post/</loc>
+    <loc>http://localhost:1313/posts/my-second-post/</loc>
     <lastmod>2025-10-17T15:29:02+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/projects/project-name/</loc>
+    <loc>http://localhost:1313/projects/project-name/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/posts/first-post/</loc>
+    <loc>http://localhost:1313/posts/first-post/</loc>
     <lastmod>2025-10-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:58304/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
