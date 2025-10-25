@@ -4,9 +4,16 @@ body, p, li, a, span {
   font-family: 'Lato', sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: 'Bitter', serif !important;
+  font-weight: 700 !important;  /* lighter weight for h1 */
 }
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Bitter', serif !important;
+  font-weight: 600 !important;  /* even lighter for smaller headings */
+}
+
 
 /* Target featured images in article cards */
 .article-card img,
@@ -78,3 +85,4 @@ body:has([class*="background"]) article {
 p {
   font-size: 1.125rem; /* 18px if base is 16px */
 }
+
