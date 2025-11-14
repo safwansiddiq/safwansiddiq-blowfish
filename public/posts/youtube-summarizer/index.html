@@ -1,0 +1,1579 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>How I Built an Automated YouTube Note-Taker &middot; Safwan</title>
+    <meta name="title" content="How I Built an Automated YouTube Note-Taker &middot; Safwan">
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/youtube-summarizer/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.2f71779b1d90ef2d927de36f6a2697ddceecbff3ce334b5e87b483177fa93d655268c7839487631ecad9b72eb1cf0f4d1833a8b64bc28ad9b316a18bd16fa577.css"
+    integrity="sha512-L3F3mx2Q7y2SfeNvaiaX3c7sv/POM0teh7SDF3&#43;pPWVSaMeDlIdjHsrZty6xzw9NGDOotkvCitmzFqGL0W&#43;ldw==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/youtube-summarizer/">
+  <meta property="og:site_name" content="Safwan">
+  <meta property="og:title" content="How I Built an Automated YouTube Note-Taker">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-14T10:44:51+08:00">
+    <meta property="article:modified_time" content="2025-11-14T10:44:51+08:00">
+    <meta property="og:image" content="http://localhost:1313/posts/youtube-summarizer/featured.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/youtube-summarizer/featured.png">
+  <meta name="twitter:title" content="How I Built an Automated YouTube Note-Taker">
+<meta name="twitter:image" content="http://localhost:1313/posts/youtube-summarizer/featured.png">
+    <meta property="og:image" content="http://localhost:1313/posts/youtube-summarizer/featured.png">
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blog",
+    "name": "How I Built an Automated YouTube Note-Taker",
+    "headline": "How I Built an Automated YouTube Note-Taker",
+    
+    
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/youtube-summarizer\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Safwan Siddiq"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-11-14T10:44:51\u002b08:00",
+    "datePublished": "2025-11-14T10:44:51\u002b08:00",
+    
+    "dateModified": "2025-11-14T10:44:51\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2442"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Safwan Siddiq">
+  
+  
+    
+      
+        
+          <link href="https://linkedin.com/in/safwansiddiq" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          Safwan
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About">
+    About
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/projects/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Projects">
+    Projects
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Blog">
+    Blog
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    Contact
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/projects/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Projects">
+      Projects
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Blog">
+      Blog
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Contact
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+
+
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    
+    
+    <img
+      id="background-image"
+      src="/posts/youtube-summarizer/background.svg"
+      alt="Background Image"
+      class="absolute inset-0 w-full h-full object-cover">
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+    <div
+      class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+  </div>
+
+  
+    <div
+      id="background-blur"
+      class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+      integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+      data-blur-id="background-blur"
+      data-image-id="background-image"
+      data-image-url="/posts/youtube-summarizer/background.svg"></script>
+  
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        How I Built an Automated YouTube Note-Taker
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-11-14T10:44:51&#43;08:00">14 November 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2442 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#here-is-how-i-went-from-failed-attempts-to-a-working-ai-workflow">Here is How I Went From Failed Attempts to a Working AI Workflow</a>
+      <ul>
+        <li><a href="#the-vision-what-i-wanted-to-build">The Vision: What I Wanted to Build</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-1-the-first-failed-attempts-at-getting-a-transcript">Part 1: The First (Failed) Attempts at Getting a Transcript</a></li>
+    <li><a href="#part-2-the-perplexity-pivot---letting-ai-do-the-heavy-lifting">Part 2: The &ldquo;Perplexity&rdquo; Pivot - Letting AI Do the Heavy Lifting</a></li>
+    <li><a href="#part-3-the-api-breakthrough---finding-the-right-tool">Part 3: The API Breakthrough - Finding the Right Tool</a></li>
+    <li><a href="#part-4-from-generic-summaries-to-detailed-notes">Part 4: From Generic Summaries to Detailed Notes</a>
+      <ul>
+        <li><a href="#the-great-prompt-engineering-journey">The Great Prompt Engineering Journey</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-5-the-metadata-layer">Part 5: The Metadata Layer</a></li>
+    <li><a href="#part-6-error-handling---making-it-production-ready">Part 6: Error Handling - Making It Production-Ready</a></li>
+    <li><a href="#part-7-choosing-the-right-ai-model">Part 7: Choosing the Right AI Model</a></li>
+    <li><a href="#part-8-the-final-workflow">Part 8: The Final Workflow</a>
+      <ul>
+        <li><a href="#what-i-learned">What I Learned</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-result">The Result</a></li>
+    <li><a href="#appendix">Appendix:</a>
+      <ul>
+        <li><a href="#the-final-prompt">The Final Prompt</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#here-is-how-i-went-from-failed-attempts-to-a-working-ai-workflow">Here is How I Went From Failed Attempts to a Working AI Workflow</a>
+      <ul>
+        <li><a href="#the-vision-what-i-wanted-to-build">The Vision: What I Wanted to Build</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-1-the-first-failed-attempts-at-getting-a-transcript">Part 1: The First (Failed) Attempts at Getting a Transcript</a></li>
+    <li><a href="#part-2-the-perplexity-pivot---letting-ai-do-the-heavy-lifting">Part 2: The &ldquo;Perplexity&rdquo; Pivot - Letting AI Do the Heavy Lifting</a></li>
+    <li><a href="#part-3-the-api-breakthrough---finding-the-right-tool">Part 3: The API Breakthrough - Finding the Right Tool</a></li>
+    <li><a href="#part-4-from-generic-summaries-to-detailed-notes">Part 4: From Generic Summaries to Detailed Notes</a>
+      <ul>
+        <li><a href="#the-great-prompt-engineering-journey">The Great Prompt Engineering Journey</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-5-the-metadata-layer">Part 5: The Metadata Layer</a></li>
+    <li><a href="#part-6-error-handling---making-it-production-ready">Part 6: Error Handling - Making It Production-Ready</a></li>
+    <li><a href="#part-7-choosing-the-right-ai-model">Part 7: Choosing the Right AI Model</a></li>
+    <li><a href="#part-8-the-final-workflow">Part 8: The Final Workflow</a>
+      <ul>
+        <li><a href="#what-i-learned">What I Learned</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-result">The Result</a></li>
+    <li><a href="#appendix">Appendix:</a>
+      <ul>
+        <li><a href="#the-final-prompt">The Final Prompt</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="The flow I had in mind"
+    srcset="
+      /posts/youtube-summarizer/yt-summarizer-main_hu_900f4c42114ce766.png  330w,
+      /posts/youtube-summarizer/yt-summarizer-main_hu_c6396485e6e36896.png  660w,
+      /posts/youtube-summarizer/yt-summarizer-main_hu_c406b7e467a082ef.png 1280w
+    "
+    data-zoom-src="/posts/youtube-summarizer/yt-summarizer-main.png"
+    src="/posts/youtube-summarizer/yt-summarizer-main.png">
+
+  
+    <figcaption>The flow I had in mind</figcaption>
+</figure>
+</p>
+
+<h2 class="relative group">Here is How I Went From Failed Attempts to a Working AI Workflow 
+    <div id="here-is-how-i-went-from-failed-attempts-to-a-working-ai-workflow" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#here-is-how-i-went-from-failed-attempts-to-a-working-ai-workflow" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>I watch a lot of <span class="relative inline-block align-text-bottom icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span> YouTube. Tutorials on automation, podcasts with founders, educational deep-dives on topics I&rsquo;m curious about. The problem? I&rsquo;d watch something brilliant, think &ldquo;I need to remember this,&rdquo; and then&hellip; forget it all two days later.</p>
+<p>I needed a second brain for YouTube — something that could automatically capture the insights, organize them with timestamps, and save them to my Notion workspace where I could actually reference them later. So I set out to build exactly that: a <span class="relative inline-block align-text-bottom icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg></span> Telegram bot that turns any YouTube link into comprehensive, timestamped notes.</p>
+<p>Spoiler: It took way more attempts than I expected. Here&rsquo;s the full story of how I went from complete failures to a workflow that actually works.</p>
+
+<h3 class="relative group">The Vision: What I Wanted to Build 
+    <div id="the-vision-what-i-wanted-to-build" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-vision-what-i-wanted-to-build" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The concept was simple:</p>
+<ol>
+<li>
+<p>Send a YouTube link to a Telegram bot</p>
+</li>
+<li>
+<p>Get back detailed notes with clickable timestamps, key takeaways, and curated resources</p>
+</li>
+<li>
+<p>Have everything automatically saved to a Notion page</p>
+</li>
+</ol>
+<p>The tools I chose:</p>
+<ul>
+<li>
+<p>n8n for workflow automation (self-hosted on Hostinger)</p>
+</li>
+<li>
+<p>OpenRouter for access to Claude 4.5 Sonnet and other AI models</p>
+</li>
+<li>
+<p>RapidAPI for fetching YouTube transcripts and metadata</p>
+</li>
+<li>
+<p>Telegram as my interface</p>
+</li>
+<li>
+<p>Notion as my knowledge repository</p>
+</li>
+</ul>
+<p>Simple enough, right? Well, not exactly.</p>
+
+<h2 class="relative group">Part 1: The First (Failed) Attempts at Getting a Transcript 
+    <div id="part-1-the-first-failed-attempts-at-getting-a-transcript" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-1-the-first-failed-attempts-at-getting-a-transcript" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>My first thought was the &ldquo;easy&rdquo; approach: just scrape the transcript from the web. I&rsquo;d used the HTTP Request node in n8n before, so I figured I could point it at a transcript website like youtubetranscripts.com, feed it the YouTube URL, and extract the text.</p>
+<p>The reality? I got back this monstrosity:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;title&gt;YouTube Transcript&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; }
+        .transcript { ... }
+    &lt;/style&gt;
+&lt;/head&gt;
+...
+</code></pre><p>Pages and pages of HTML, CSS, JavaScript—everything except a clean transcript. I tried different nodes, different websites, different approaches. Nothing worked. I was drowning in markup.</p>
+<p>💡 <strong>Lesson #1</strong>: Web scraping consumer-facing websites is brittle and unreliable. The structure can change at any moment, and you&rsquo;re fighting against page layouts designed for humans, not machines. I needed something more robust.</p>
+
+<h2 class="relative group">Part 2: The &ldquo;Perplexity&rdquo; Pivot - Letting AI Do the Heavy Lifting 
+    <div id="part-2-the-perplexity-pivot---letting-ai-do-the-heavy-lifting" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-2-the-perplexity-pivot---letting-ai-do-the-heavy-lifting" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Then I had what I thought was a brilliant idea: what if I just let the AI find the transcript for me? Tools like Perplexity can browse the web and extract information. I had access to web search tools like Tavily and Brave Search through n8n. Why not give my AI Agent one of those tools and let it handle the messy work?</p>
+<p>I installed the Tavily node, connected it to my AI Agent, and updated my prompt:</p>
+<pre tabindex="0"><code>When given a YouTube video link, use web search to find and retrieve the video&#39;s transcript, then analyze it...
+I sent a test YouTube URL through the workflow.
+</code></pre><p>The error:</p>
+<pre tabindex="0"><code>{
+  &#34;errorMessage&#34;: &#34;Bad request - please check your parameters&#34;,
+  &#34;errorDescription&#34;: &#34;Query cannot consist only of site: operators. Please provide search terms.&#34;
+}
+</code></pre><p>The problem? The AI was trying to pass the raw YouTube URL directly to Tavily as a search query. But Tavily expected actual search terms, not a URL. I needed to either pre-process the URL into a proper search query or find a completely different approach.</p>
+<p>I tried switching to different models (since Perplexity Sonar didn&rsquo;t support tool use), tweaked the prompt, adjusted how Tavily was configured. Nothing worked consistently.</p>
+<p>💡 <strong>Lesson #2</strong>: AI tools aren&rsquo;t magic. You can&rsquo;t just give an AI a hammer and expect it to build a house. You need to understand how the tool works and structure your inputs appropriately. The AI is powerful, but it still needs guidance.</p>
+
+<h2 class="relative group">Part 3: The API Breakthrough - Finding the Right Tool 
+    <div id="part-3-the-api-breakthrough---finding-the-right-tool" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-3-the-api-breakthrough---finding-the-right-tool" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Frustrated with all the workarounds, I went back to basics: just use an API specifically built for this task.</p>
+<p>A quick search on RapidAPI led me to the YouTube Transcripts API. Finally—a dedicated endpoint that returns clean, structured JSON with the transcript text, timestamps, and duration.</p>
+<p>I set up the HTTP Request node with the proper cURL parameters:</p>
+<pre tabindex="0"><code>GET https://youtube-transcripts.p.rapidapi.com/youtube/transcript
+?url={{ videoUrl }}
+&amp;videoId={{ videoId }}
+&amp;chunkSize=100
+&amp;text=false
+&amp;lang=en
+</code></pre><p>Headers:</p>
+<pre tabindex="0"><code>x-rapidapi-host: youtube-transcripts.p.rapidapi.com
+x-rapidapi-key: YOUR_API_KEY
+</code></pre><p>And for the first time&hellip; it worked. I got back beautiful, clean JSON:</p>
+<pre tabindex="0"><code>{
+  &#34;lang&#34;: &#34;en&#34;,
+  &#34;content&#34;: [
+    {
+      &#34;text&#34;: &#34;These are the five steps I always use when building AI agents...&#34;,
+      &#34;offset&#34;: 80,
+      &#34;duration&#34;: 23840
+    },
+    ...
+  ]
+}
+</code></pre><p>With this reliable data source, I could finally build the core workflow:</p>
+<ol>
+<li>
+<p>Telegram Trigger → Receives YouTube link</p>
+</li>
+<li>
+<p>IF Node → Validates it contains &ldquo;youtu&rdquo;</p>
+</li>
+<li>
+<p>Code Node → Extracts video ID from URL</p>
+</li>
+<li>
+<p>HTTP Request → Calls RapidAPI for transcript</p>
+</li>
+<li>
+<p>Code Node → Formats transcript with timestamps</p>
+</li>
+<li>
+<p>AI Agent → Analyzes and creates notes</p>
+</li>
+<li>
+<p>Notion Node → Saves the result</p>
+</li>
+<li>
+<p>Telegram Reply → Sends confirmation with Notion link</p>
+</li>
+</ol>
+<p>💡 <strong>Lesson #3</strong>: Use APIs whenever possible. They provide structured, predictable data. They&rsquo;re maintained by people who care about uptime. They&rsquo;re the foundation of robust automation.</p>
+
+<h2 class="relative group">Part 4: From Generic Summaries to Detailed Notes 
+    <div id="part-4-from-generic-summaries-to-detailed-notes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-4-from-generic-summaries-to-detailed-notes" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Now that I had the transcript, I needed the AI to actually do something useful with it. My first attempt was a simple prompt:</p>
+<p>Analyze this YouTube transcript and create a summary.
+The result? A generic, high-level overview. Something like:</p>
+<p>&ldquo;This video discusses five steps for building AI agents. The speaker covers foundations, identifying opportunities, process mapping, workflows vs agents, and guardrails.&rdquo;</p>
+<p>Technically accurate, but completely useless. I didn&rsquo;t need a book report—I needed notes. The kind of notes I&rsquo;d take if I watched the video myself.</p>
+
+<h3 class="relative group">The Great Prompt Engineering Journey 
+    <div id="the-great-prompt-engineering-journey" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-great-prompt-engineering-journey" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This is where I spent most of my time. Here&rsquo;s what I learned through iteration:</p>
+<p><strong>Change #1</strong>: Set the Role and Perspective</p>
+<p>Instead of &ldquo;summarize this,&rdquo; I changed the opening to:</p>
+<pre tabindex="0"><code>You are an expert note-taker who creates comprehensive, detailed notes from video transcripts. Your goal is to capture the substance, nuance, and creator&#39;s voice as if someone watched the entire video and wrote everything down.
+</code></pre><p>Better. The AI started writing more like a human taking notes.</p>
+<p><strong>Change #2</strong>: Content Type Detection</p>
+<p>I realized that a tutorial needs different formatting than a podcast. So I added:</p>
+<pre tabindex="0"><code>Detect the Content Type:
+- Tutorial/How-to: Focus on step-by-step instructions and implementation
+- Podcast/Interview: Extract stories, insights, and quotes
+- Educational: Capture concepts, explanations, and frameworks
+</code></pre><p>This made the AI adapt its structure to the type of content.</p>
+<p><strong>Change #3</strong>: Clickable Timestamps</p>
+<p>This was a game-changer. I wanted timestamps that I could click to jump to that exact moment in the video. The format:</p>
+<pre tabindex="0"><code>[2:30](https://www.youtube.com/watch?v=VIDEO_ID&amp;t=150s)
+</code></pre><p>I added to the prompt:</p>
+<pre tabindex="0"><code>Use clickable timestamps frequently. Format: [MM:SS](videoURL&amp;t=XXXs) where you convert MM:SS to seconds.
+Example: [2:30](videoURL&amp;t=150s)
+</code></pre><p><strong>The Timestamp Hallucination Problem</strong></p>
+<p>Then I hit a bizarre issue: the AI was making up timestamps. It would reference [2:29] for a quote that actually appeared at [15:30]. The timestamps looked plausible, but they were completely wrong.</p>
+<p>The problem? The AI was trying to be helpful and was generating timestamps instead of using the actual ones from the transcript.</p>
+<p>The fix required a heavy-handed addition to the prompt:</p>
+<pre tabindex="0"><code>**CRITICAL TIMESTAMP RULES:**
+- ONLY use timestamps that appear in the transcript above
+- NEVER make up, estimate, or fabricate timestamps
+- When referencing content, find where it actually appears in the transcript
+- If you&#39;re unsure, look back at the transcript to find the real timestamp
+</code></pre><p>This finally forced the AI to stick to reality.</p>
+<p><strong>Change #4</strong>: Curated Resources via Tavily</p>
+<p>Since I still had the Tavily search tool connected, I added:</p>
+<pre tabindex="0"><code>### Curated Resources for Further Learning
+Using web search, find and recommend 5-7 high-quality resources related to the main topics covered in this video.
+Now the AI would search for related articles, books, and tools mentioned in the video and include them in the notes.
+</code></pre><p>💡 <strong>Lesson #4</strong>: Your prompt is your program. The difference between mediocre AI output and genuinely useful output comes down to how specific, structured, and constraint-heavy your prompt is. Treat it like code.</p>
+
+<h2 class="relative group">Part 5: The Metadata Layer 
+    <div id="part-5-the-metadata-layer" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-5-the-metadata-layer" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The notes were good, but something was missing: context. Who made this video? What was it called? How long was it?</p>
+<p>I added a second RapidAPI call to fetch video metadata (title, channel, thumbnail, duration). Then I updated my prompt to start the notes with:</p>
+<pre tabindex="0"><code>![Thumbnail](thumbnailURL)
+**&#34;Video Title&#34;** by Channel Name
+</code></pre><p>This gave every note page a visual header, making it easier to recognize at a glance in Notion.</p>
+<p><strong>The Duration Conversion Problem</strong>
+The metadata returned duration in HH:MM:SS format (like 1:23:45), but I needed it in total seconds for the AI to reference. So I wrote a quick Code node:</p>
+<pre tabindex="0"><code>const duration = $json.duration;
+const parts = duration.split(&#39;:&#39;).map(part =&gt; parseInt(part, 10));
+
+let seconds = 0;
+if (parts.length === 3) {
+  seconds = (parts[0] * 3600) + (parts[1] * 60) + parts[2];
+} else if (parts.length === 2) {
+  seconds = (parts[0] * 60) + parts[1];
+} else {
+  seconds = parts[0];
+}
+
+return { ...$json, lengthSeconds: seconds };
+</code></pre><p>Now the AI had access to the duration in a usable format.</p>
+
+<h2 class="relative group">Part 6: Error Handling - Making It Production-Ready 
+    <div id="part-6-error-handling---making-it-production-ready" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-6-error-handling---making-it-production-ready" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>What happens if a video has captions disabled? Or if RapidAPI goes down for maintenance? Initially, the workflow would just&hellip; fail silently.</p>
+<p>I would just wait and wait and wait&hellip; and the results never comes.</p>
+<p>I needed error handling to avoid this.</p>
+<p>The Setup:</p>
+<p>On both RapidAPI HTTP Request nodes, I enabled &ldquo;Continue on Fail&rdquo;</p>
+<p>After each API call, I added an IF node to check for errors</p>
+<p>If an error was detected, the workflow would:</p>
+<p>Send me a Telegram message explaining the issue</p>
+<p>Stop execution to avoid cascading failures</p>
+<p>The error message looked like:</p>
+<pre tabindex="0"><code>😞 **Captions Not Available**
+
+Video: [YouTube URL]
+
+❌ This video doesn&#39;t have public captions available or they&#39;re disabled by the creator.
+</code></pre><p>💡 <strong>Lesson #5</strong>: A good workflow is a resilient workflow. Error handling, logging, and clear user feedback are what separate a personal hack from a tool you can actually rely on.</p>
+
+<h2 class="relative group">Part 7: Choosing the Right AI Model 
+    <div id="part-7-choosing-the-right-ai-model" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-7-choosing-the-right-ai-model" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>I experimented with several models on OpenRouter:</p>
+<p>GPT-4o (fast but sometimes shallow)</p>
+<p>Gemini 2.5 Pro (great for long videos, very affordable)</p>
+<p>Claude 4.5 Sonnet (best overall for nuanced note-taking)</p>
+<p>For this use case, Claude 4.5 Sonnet won. Here&rsquo;s why:</p>
+<ul>
+<li>200K context window - Handles even 2+ hour video transcripts</li>
+<li>Superior reasoning - Captures nuance and preserves the creator&rsquo;s voice</li>
+<li>Excellent tool use - Works seamlessly with the Tavily search integration</li>
+<li>Natural writing style - The notes don&rsquo;t sound robotic</li>
+</ul>
+<p>Cost per video averaged around <strong>$0.08–$0.25</strong> depending on length, which felt reasonable for the value I was getting.</p>
+
+<h2 class="relative group">Part 8: The Final Workflow 
+    <div id="part-8-the-final-workflow" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#part-8-the-final-workflow" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Here&rsquo;s what the completed automation looks like:
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="The full N8N workflow"
+    srcset="
+      /posts/youtube-summarizer/yt-summarizer-01_hu_10a66acedbc79c4.png  330w,
+      /posts/youtube-summarizer/yt-summarizer-01_hu_4e2d1d340dde3a51.png  660w,
+      /posts/youtube-summarizer/yt-summarizer-01_hu_9257119b974b9895.png 1280w
+    "
+    data-zoom-src="/posts/youtube-summarizer/yt-summarizer-01.png"
+    src="/posts/youtube-summarizer/yt-summarizer-01.png">
+
+  
+    <figcaption>This is the full N8N workflow</figcaption>
+</figure>
+</p>
+<pre tabindex="0"><code>Telegram Trigger
+↓
+IF: Contains &#34;youtu&#34;?
+↓
+Code: Extract Video ID
+↓
+HTTP Request: Get Transcript (RapidAPI)
+↓
+IF: Error? → Send Telegram Error → Stop
+↓
+Code: Clean Transcript (format with timestamps)
+↓
+HTTP Request: Get Metadata (RapidAPI)
+↓
+IF: Error? → Send Telegram Error → Stop
+↓
+Code: Convert Duration to Seconds
+↓
+Send Telegram: &#34;Working on it...&#34;
+↓
+AI Agent (Claude 4.5 Sonnet + Tavily Tool)
+↓
+Create Notion Page
+↓
+Log to Google Sheets
+↓
+Send Telegram: Markdown link to Notion page
+</code></pre><p>The entire process takes 30–60 seconds from link to finished notes.</p>
+
+<h3 class="relative group">What I Learned 
+    <div id="what-i-learned" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#what-i-learned" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>
+<p>Start simple, but expect to iterate. My first version was &ldquo;send URL, get transcript, ask AI to summarize.&rdquo; The final version is far more sophisticated because I kept finding gaps.</p>
+</li>
+<li>
+<p>APIs &gt; scraping, always. The hours I wasted trying to scrape web pages could have been spent building features. APIs are worth the small cost.</p>
+</li>
+<li>
+<p>Prompt engineering is 80% of the work. The difference between mediocre and excellent AI output comes down to how well you structure your instructions.</p>
+</li>
+<li>
+<p>AI tools need guidance. You can&rsquo;t just throw a tool at an AI and expect magic. You need to understand how the tool works and design your prompts accordingly.</p>
+</li>
+<li>
+<p>Error handling is what makes it real. A workflow that fails gracefully and tells you why is infinitely more valuable than one that just breaks.</p>
+</li>
+<li>
+<p>The best way to learn is to build something you&rsquo;ll actually use. I built this because I genuinely wanted it. That kept me going through all the failed attempts.</p>
+</li>
+</ol>
+
+<h2 class="relative group">The Result 
+    <div id="the-result" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-result" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Now, whenever I watch a YouTube video worth remembering, I paste the link into Telegram. A minute later, I will receive a message on Telegram with a link.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="Screenshot of my Telegram thread"
+    srcset="
+      /posts/youtube-summarizer/yt-summarizer-02_hu_b0e2eff12b4757af.png  330w,
+      /posts/youtube-summarizer/yt-summarizer-02_hu_1291c6bf8920d846.png  660w,
+      /posts/youtube-summarizer/yt-summarizer-02_hu_5846214cf1540723.png 1280w
+    "
+    data-zoom-src="/posts/youtube-summarizer/yt-summarizer-02.png"
+    src="/posts/youtube-summarizer/yt-summarizer-02.png">
+
+  
+    <figcaption>Sceenshot of the Telegram thread</figcaption>
+</figure>
+</p>
+<p>And the link will point to a Notion page with:</p>
+<ul>
+<li>A thumbnail and title</li>
+<li>Comprehensive notes with the creator&rsquo;s voice preserved</li>
+<li>Clickable timestamps to jump to specific moments</li>
+<li>Key takeaways and insights</li>
+<li>Curated resources for deeper learning</li>
+</ul>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="Preview of the Notion page"
+    srcset="
+      /posts/youtube-summarizer/yt-summarizer-03_hu_98b43407fee48154.png  330w,
+      /posts/youtube-summarizer/yt-summarizer-03_hu_30a5983129634569.png  660w,
+      /posts/youtube-summarizer/yt-summarizer-03_hu_6b6a32522d53754b.png 1280w
+    "
+    data-zoom-src="/posts/youtube-summarizer/yt-summarizer-03.png"
+    src="/posts/youtube-summarizer/yt-summarizer-03.png">
+
+  
+    <figcaption>Preview of the summary on Notion</figcaption>
+</figure>
+</p>
+<p>It&rsquo;s transformed how I consume and retain information from YouTube. Instead of passively watching and forgetting, I&rsquo;m actively building a knowledge base I can reference forever.</p>
+<p>If you&rsquo;re thinking about building something similar, my advice: start messy, iterate relentlessly, and don&rsquo;t be afraid to scrap approaches that aren&rsquo;t working. The best automations are built through trial and error.</p>
+
+<h2 class="relative group">Appendix: 
+    <div id="appendix" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#appendix" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">The Final Prompt 
+    <div id="the-final-prompt" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-final-prompt" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Here&rsquo;s the complete prompt I use in the AI Agent node (cleaned up for readability):</p>
+<pre tabindex="0"><code>You are an expert note-taker who creates comprehensive, detailed notes from video transcripts. Your goal is to capture the substance, nuance, and creator&#39;s voice.
+
+---
+
+VIDEO INFORMATION:
+Title: {{ $json.title }}
+Channel: {{ $json.author }}
+Duration: {{ $json.lengthSeconds }} seconds
+Video URL: {{ $json.videoUrl }}
+
+FULL TRANSCRIPT WITH TIMESTAMPS:
+{{ $json.transcript }}
+
+---
+
+CREATE DETAILED NOTES FOLLOWING THESE GUIDELINES:
+
+**CRITICAL TIMESTAMP RULES:**
+- ONLY use timestamps that appear in the transcript above
+- NEVER make up, estimate, or fabricate timestamps
+- Format: [MM:SS]({{ $json.videoUrl }}&amp;t=XXXs)
+- Convert MM:SS to seconds (e.g., 2:30 = 150 seconds)
+
+START YOUR NOTES WITH:
+![Thumbnail]({{ $json.thumbnail }})
+**&#34;{{ $json.title }}&#34;** by {{ $json.author }}
+
+---
+
+1. Detect Content Type (Tutorial, Podcast, Educational, Review)
+2. Preserve the creator&#39;s voice with direct quotes
+3. Use clickable timestamps frequently
+
+### Overview
+Brief 2-3 sentence intro
+
+### Main Content
+Detailed notes organized by topic, with timestamps
+
+### Key Takeaways
+5-10 actionable insights with timestamps
+
+### Curated Resources for Further Learning
+Using web search, find 5-7 high-quality resources related to topics covered.
+
+---
+
+RULES:
+- Be thorough (1,500-2,500 words)
+- Only use real timestamps from the transcript
+- Include specific examples, numbers, and details
+- Write naturally, as if YOU watched and took notes
+</code></pre><p>That&rsquo;s it. If you build something similar, I&rsquo;d love to hear about it. Happy automating!</p>
+
+          
+          
+          
+        </div>
+        
+          
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
+        width="96"
+        height="96"
+        alt="Safwan Siddiq"
+        src="/avatar_hu_1980b74ca9a936fe.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Safwan Siddiq
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">This is the BIO for the website</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://linkedin.com/in/safwansiddiq"
+          target="_blank"
+          aria-label="Linkedin"
+          title="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-10"></div>
+  
+
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/youtube-summarizer/index.md"
+          data-oid-likes="likes_posts/youtube-summarizer/index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/change-this-to-title/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Change This to Title</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-10-22T22:01:57&#43;08:00">22 October 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0 z-10">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Safwan Siddiq
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

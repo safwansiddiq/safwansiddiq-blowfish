@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Safwan Siddiq</copyright>
-    <lastBuildDate>Wed, 22 Oct 2025 22:01:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Nov 2025 10:44:51 +0800</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How I Built an Automated YouTube Note-Taker</title>
+      <link>http://localhost:1313/posts/youtube-summarizer/</link>
+      <pubDate>Fri, 14 Nov 2025 10:44:51 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/youtube-summarizer/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/youtube-summarizer/featured.png" />
+    </item>
     
     <item>
       <title>Change This to Title</title>

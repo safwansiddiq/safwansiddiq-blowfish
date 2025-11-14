@@ -4,18 +4,24 @@
 
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-22T22:01:57+08:00</lastmod>
+    <lastmod>2025-11-14T10:44:51+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/change-this-to-title/</loc>
-    <lastmod>2025-10-22T22:01:57+08:00</lastmod>
+    <loc>http://localhost:1313/posts/youtube-summarizer/</loc>
+    <lastmod>2025-11-14T10:44:51+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-14T10:44:51+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/change-this-to-title/</loc>
     <lastmod>2025-10-22T22:01:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
