@@ -9,7 +9,7 @@ Hi, I'm Safwan 👋
   tag=h1
   lifeLike=true
 >}}
-I make cool shit.. sometimes
+I make cool shit.. sometimes 
 {{< /typeit >}}
 
 I'm a [your profession/student/role] based in [location]. I'm passionate about [your interests].

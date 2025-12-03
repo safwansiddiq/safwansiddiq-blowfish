@@ -4,43 +4,25 @@
 
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-14T10:44:51+08:00</lastmod>
+    <lastmod>2025-12-03T13:46:47+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/form-to-notion/</loc>
+    <lastmod>2025-12-03T13:46:47+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-12-03T13:46:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/youtube-summarizer/</loc>
     <lastmod>2025-11-14T10:44:51+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-14T10:44:51+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/change-this-to-title/</loc>
-    <lastmod>2025-10-22T22:01:57+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/3rd-post/</loc>
-    <lastmod>2025-10-17T16:01:34+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/4th-post/</loc>
-    <lastmod>2025-10-17T16:01:34+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/my-second-post/</loc>
-    <lastmod>2025-10-17T15:29:02+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -53,12 +35,6 @@
   <url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/first-post/</loc>
-    <lastmod>2025-10-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
