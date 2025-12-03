@@ -8,8 +8,7 @@ featuredImage: "featured.jpg"
 showHero: true
 heroStyle: "background"
 ---
-
-# How I Built a Form-to-Notion Workflow (Because Copy-Paste is Still Broken in 2025)
+![The flow I had in mind](form-to-notion-1.png "The flow I had in mind")
 
 If you've ever tried copying AI-generated content into Notion, you know the pain. Formatting breaks. Paragraphs turn into weird blocks. What should take 10 seconds becomes a 5-minute cleanup job. On mobile? Forget about it—it's a complete nightmare.
 
@@ -32,6 +31,7 @@ That's when it clicked: **I could reuse this subworkflow for anything**. YouTube
 All I needed was a way to trigger it with a simple form.
 
 ## Building the Workflow: Tally + n8n + Notion
+!["The n8n workflow"](form-to-notion-2.png "The n8n workflow")
 
 The architecture is straightforward:
 
