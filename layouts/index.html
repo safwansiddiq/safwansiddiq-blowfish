@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>System Soup — AI Automation for Growing Businesses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f0e8;
+      --bg2: #edeae0;
+      --surface: #ffffff;
+      --border: #d8d3c8;
+      --text: #1a1814;
+      --muted: #7a7468;
+      --accent: #c85a2a;
+      --accent-light: #f5e8e0;
+      --accent2: #2a6e4a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Epilogue', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 1.05rem;
+      overflow-x: hidden;
+    }
+
+    /* Subtle paper texture */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 240, 232, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 3rem 4rem;
+      gap: 4rem;
+    }
+
+    .hero-left { position: relative; }
+
+    .hero-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.2s;
+    }
+
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .hero-sub strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.65s;
+    }
+
+    .btn-primary {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    /* Hero right — visual */
+    .hero-right {
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 0.7s;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .hero-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-node {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .flow-node.input { background: var(--accent-light); color: var(--accent); border: 1px solid #e8c8b8; }
+    .flow-node.process { background: #e8f0f5; color: #2a5a7a; border: 1px solid #c8dde8; }
+    .flow-node.output { background: #e8f5ee; color: var(--accent2); border: 1px solid #c8e8d8; }
+
+    .flow-arrow {
+      color: var(--border);
+      font-size: 0.9rem;
+    }
+
+    .hero-card-stat {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 2rem;
+    }
+
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: -14px;
+      right: 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    h2 em { font-style: italic; color: var(--accent); }
+
+    .section-intro {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── PROBLEMS ── */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .problem-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .problem-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .problem-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .problem-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .problem-card .arrow {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .how-step {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+
+    .how-step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 1rem;
+      -webkit-text-stroke: 1px var(--border);
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── EXAMPLE ── */
+    .example-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+
+    .example-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .example-text p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .ba-card {
+      padding: 1.25rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .ba-card.before {
+      background: #fdf0ec;
+      border: 1px solid #f0cfc5;
+    }
+
+    .ba-card.after {
+      background: #edf5f0;
+      border: 1px solid #c5e0ce;
+    }
+
+    .ba-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .ba-card.before .ba-label { color: #c85a2a; }
+    .ba-card.after .ba-label { color: var(--accent2); }
+
+    .ba-list {
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .ba-list li {
+      margin-bottom: 0.35rem;
+      padding-left: 1rem;
+      position: relative;
+      font-size: 0.85rem;
+    }
+
+    .ba-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+    }
+
+    /* Visual mock */
+    .email-mock {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 12px 50px rgba(0,0,0,0.08);
+    }
+
+    .mock-topbar {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-dot.r { background: #ff6b6b; }
+    .mock-dot.y { background: #ffc93c; }
+    .mock-dot.g { background: #6bcb77; }
+
+    .mock-title {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+    }
+
+    .mock-body { padding: 1.25rem; }
+
+    .email-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+      transition: background 0.2s;
+    }
+
+    .email-row:hover { background: var(--bg); }
+
+    .email-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .tag-inquiry { background: #fdf0ec; color: var(--accent); }
+    .tag-faq { background: #e8f0f5; color: #2a5a7a; }
+    .tag-followup { background: #edf5f0; color: var(--accent2); }
+    .tag-problem { background: #fdf5e8; color: #8a6020; }
+
+    .email-subject {
+      font-size: 0.82rem;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .email-auto {
+      font-size: 0.65rem;
+      color: var(--accent2);
+      background: #edf5f0;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-inner h2 {
+      color: var(--bg);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-inner h2 em { color: #d4f060; }
+
+    .about-inner p {
+      color: #a09a90;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .about-inner p strong { color: var(--bg); font-weight: 400; }
+
+    .about-inner .btn-light {
+      display: inline-block;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--bg);
+      border-radius: 2px;
+      margin-top: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .about-inner .btn-light:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .frontier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .frontier-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .frontier-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: #d4f060;
+      white-space: nowrap;
+      padding-top: 0.1rem;
+      min-width: 55px;
+    }
+
+    .frontier-text {
+      font-size: 0.9rem;
+      color: #a09a90;
+      line-height: 1.5;
+    }
+
+    .frontier-text strong { color: var(--bg); font-weight: 400; }
+
+    /* ── CTA ── */
+    .cta-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 7rem 3rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-section p {
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; gap: 3rem; }
+      .hero-right { display: none; }
+      .problems-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; }
+      .how-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .how-step:last-child { border-bottom: none; }
+      .example-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .section { padding: 4rem 2rem; }
+      nav { padding: 1.25rem 2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">System<span>Soup</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="mailto:hello@systemsoup.co" class="nav-cta">Work with us</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-kicker">AI Automation · KL, Malaysia</p>
+      <h1 class="hero-headline">
+        Your business,<br>running <em>smarter</em><br>than yesterday.
+      </h1>
+      <p class="hero-sub">
+        We build AI-powered automation workflows that <strong>cut out the manual grind</strong>, surface the right information, and free your team to do the work that actually matters.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:hello@systemsoup.co" class="btn-primary">Let's talk</a>
+        <a href="#services" class="btn-ghost">See what we do</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <span class="hero-card-badge">Live automation</span>
+        <p class="hero-card-label">Email intelligence workflow</p>
+
+        <div class="flow-row">
+          <span class="flow-node input">Inbox</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node process">AI Classifier</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node output">Dashboard</span>
+        </div>
+        <div class="flow-row">
+          <span class="flow-node input">New email</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node process">Auto-reply FAQ</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node output">Done ✓</span>
+        </div>
+
+        <div class="hero-card-stat">
+          <div class="stat-item">
+            <div class="stat-num">3h</div>
+            <div class="stat-label">saved per day</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">0</div>
+            <div class="stat-label">missed follow-ups</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">scale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEMS -->
+  <hr class="divider"/>
+  <div class="section" id="services">
+    <p class="section-label reveal">The problem</p>
+    <h2 class="reveal">Sound <em>familiar?</em></h2>
+    <p class="section-intro reveal">Most small teams aren't short on ambition — they're short on time. The same repetitive tasks keep stealing hours from the work that actually grows the business.</p>
+
+    <div class="problems-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">📬</div>
+        <p class="problem-title">Drowning in emails</p>
+        <p class="problem-desc">Your inbox is a mix of inquiries, follow-ups, complaints, and noise — and sorting through it manually is eating your mornings whole.</p>
+        <span class="arrow">→ We fix this</span>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">🔍</div>
+        <p class="problem-title">Scattered information</p>
+        <p class="problem-desc">Data lives in five different tools, nothing talks to each other, and making a simple decision means hunting through spreadsheets, chats, and emails.</p>
+        <span class="arrow">→ We fix this</span>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">🔁</div>
+        <p class="problem-title">Manual, repetitive work</p>
+        <p class="problem-desc">Your team is smart and capable — but too much of their day goes to copy-pasting, updating records, and tasks that a well-built system could handle automatically.</p>
+        <span class="arrow">→ We fix this</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="section" id="how">
+      <p class="section-label reveal">The process</p>
+      <h2 class="reveal">Simple to start.<br><em>Built to last.</em></h2>
+      <p class="section-intro reveal">We keep the process lean so you see results fast — not six months from now.</p>
+
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <div class="step-num">01</div>
+          <p class="step-title">Understand your workflow</p>
+          <p class="step-desc">We start with a conversation — not a questionnaire. We want to understand where your time actually goes, what's broken, and what a win looks like for you.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="step-num">02</div>
+          <p class="step-title">Design the system</p>
+          <p class="step-desc">We map out an automation that fits your existing tools and team. No ripping anything out. No steep learning curves. Just smart wiring between things you already use.</p>
+        </div>
+        <div class="how-step reveal">
+          <div class="step-num">03</div>
+          <p class="step-title">Build, test, hand over</p>
+          <p class="step-desc">We build it, test it until it's solid, and hand it over with clear documentation. You stay in control — we just make sure the machine runs smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMPLE -->
+  <div class="section">
+    <p class="section-label reveal">In practice</p>
+    <h2 class="reveal">What this looks like<br><em>in the real world.</em></h2>
+
+    <div class="example-wrap">
+      <div class="example-text reveal">
+        <h3>Your inbox, on autopilot.</h3>
+        <p>Imagine never manually sorting another email. Every incoming message gets read by AI, tagged by type — inquiry, follow-up, problem, FAQ — and routed to the right place.</p>
+        <p>FAQs get answered automatically. Urgent items get flagged. Everything lands on a clean dashboard so you always know what needs your attention and what's already handled.</p>
+
+        <div class="before-after">
+          <div class="ba-card before">
+            <p class="ba-label">Before</p>
+            <ul class="ba-list">
+              <li>Sort emails manually every morning</li>
+              <li>Type the same FAQ answers repeatedly</li>
+              <li>Follow-ups slip through the cracks</li>
+              <li>No overview of what's pending</li>
+            </ul>
+          </div>
+          <div class="ba-card after">
+            <p class="ba-label">After</p>
+            <ul class="ba-list">
+              <li>Emails auto-sorted on arrival</li>
+              <li>FAQs answered instantly, 24/7</li>
+              <li>Every follow-up tracked automatically</li>
+              <li>Live dashboard, always up to date</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="email-mock reveal">
+        <div class="mock-topbar">
+          <div class="mock-dot r"></div>
+          <div class="mock-dot y"></div>
+          <div class="mock-dot g"></div>
+          <span class="mock-title">Inbox — System Soup Automation</span>
+        </div>
+        <div class="mock-body">
+          <div class="email-row">
+            <span class="email-tag tag-inquiry">Inquiry</span>
+            <span class="email-subject">Interested in your services — can we talk?</span>
+          </div>
+          <div class="email-row">
+            <span class="email-tag tag-faq">FAQ</span>
+            <span class="email-subject">What are your pricing options?</span>
+            <span class="email-auto">auto-replied</span>
+          </div>
+          <div class="email-row">
+            <span class="email-tag tag-followup">Follow-up</span>
+            <span class="email-subject">Just checking in on my proposal</span>
+          </div>
+          <div class="email-row">
+            <span class="email-tag tag-problem">Problem</span>
+            <span class="email-subject">Issue with my recent order — urgent</span>
+          </div>
+          <div class="email-row">
+            <span class="email-tag tag-faq">FAQ</span>
+            <span class="email-subject">Do you offer refunds?</span>
+            <span class="email-auto">auto-replied</span>
+          </div>
+          <div class="email-row">
+            <span class="email-tag tag-inquiry">Inquiry</span>
+            <span class="email-subject">Partnership opportunity — let's connect</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <div class="about-strip" id="about">
+    <div class="about-inner">
+      <div>
+        <p class="section-label" style="color: #d4f060;">The founder</p>
+        <h2>Built by someone who's been at the <em>frontier</em> for a while.</h2>
+        <p>System Soup is built by Safwan — an engineer-turned-creative who has spent his career at the intersection of systems thinking and storytelling. He's not new to building things that work ahead of their time.</p>
+        <p><strong>The philosophy is simple:</strong> good automation should feel invisible. It should just make your business run better — without you having to think about it.</p>
+        <a href="/about/" class="btn-light">Read the full story</a>
+      </div>
+
+      <ul class="frontier-list">
+        <li class="frontier-item">
+          <span class="frontier-year">2014</span>
+          <span class="frontier-text">Co-founded a podcast studio when podcasting was still a niche curiosity in Malaysia. <strong>Ahead of the curve.</strong></span>
+        </li>
+        <li class="frontier-item">
+          <span class="frontier-year">2020</span>
+          <span class="frontier-text">Built a no-code app that beat three professional software houses in a formal evaluation, saving tens of thousands in development costs. <strong>Before no-code was mainstream.</strong></span>
+        </li>
+        <li class="frontier-item">
+          <span class="frontier-year">Now</span>
+          <span class="frontier-text">Building AI automation workflows that help businesses move faster and waste less. <strong>Right at the frontier — again.</strong></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section reveal">
+    <p class="section-label" style="justify-content: center;">Get started</p>
+    <h2>Ready to get hours<br>back in your week?</h2>
+    <p>Tell us what's slowing you down. We'll figure out the rest.</p>
+    <a href="mailto:hello@systemsoup.co" class="btn-primary">Start the conversation</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 System Soup. KL, Malaysia.</span>
+    <span><a href="mailto:hello@systemsoup.co">hello@systemsoup.co</a></span>
+  </footer>
+
+  <script>
+    // Scroll nav border
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
