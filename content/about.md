@@ -23,6 +23,8 @@ That combination has followed me everywhere since — through roles in digital m
 
 ## The Thread: Always at the Frontier.
 
+![Business Growth and Efficiency Chart](/img/about/growth_chart.png)
+
 There's a pattern people who know me tend to notice. I show up to things early — not because I'm chasing hype, but because I genuinely find new things interesting before they become obvious to everyone else.
 
 ### Podcasting — 2014
@@ -42,6 +44,8 @@ When the AI wave arrived, I was already building. I've since developed a growing
 ---
 
 ## What I Do: I Automate the Work That Slows You Down.
+
+![AI Automation Workflow Diagram](/img/about/automation_workflow.png)
 
 I design and build AI automation workflows that integrate with the tools your team already uses. Whether that's eliminating repetitive manual tasks, creating intelligent data pipelines, or building internal tools your people will actually want to use — I bring an engineer's rigour and a creative's eye for what genuinely works in practice.
 
