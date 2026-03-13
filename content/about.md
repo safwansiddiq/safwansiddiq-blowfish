@@ -5,6 +5,8 @@ description: "About me"
 
 # Hi, I'm Safwan.
 
+![Safwan Profile](/img/about/profile.jpg)
+
 **AI Automation Engineer · KL, Malaysia**
 
 I build AI-powered automation systems that make businesses run smarter — and I've spent my whole career arriving at the frontier just before everyone else does.
