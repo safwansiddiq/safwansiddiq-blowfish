@@ -5,7 +5,7 @@ description: "About me"
 
 # Hi, I'm Safwan.
 
-![Safwan Profile](/img/about/profile.jpg)
+![Safwan Profile](/img/about/profile.jpeg)
 
 **AI Automation Engineer · KL, Malaysia**
 
